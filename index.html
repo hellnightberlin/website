@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hell Night Berlin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #ffffff;
+        }
+        header, section {
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            animation: fadeIn 2s;
+        }
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .language-toggle button {
+            background-color: #0f3460;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .language-toggle button:hover {
+            background-color: #533483;
+        }
+        /* Map Container */
+        .map-container {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            animation: fadeInUp 1s;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        @keyframes fadeInDown {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        @keyframes fadeInUp {
+            from {opacity: 0; transform: translateY(50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        /* Hidden Content */
+        .hidden {
+            display: none;
+        }
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="language-toggle">
+        <button onclick="showEnglish()">English</button>
+        <button onclick="showGerman()">Deutsch</button>
+    </div>
+
+    <!-- English Content -->
+    <div id="content-en">
+        <header>
+            <h1>Hell Night Berlin</h1>
+            <p>Every Wednesday from 18:00 to 20:00</p>
+        </header>
+        <section>
+            <p>
+                Hell Night is a 2-hour parkour-based strength and endurance training. It takes place every Wednesday between 18:00 and 20:00, regardless of the weather, and is entirely led by volunteers. It has been running for over 20 years, even during the times of Covid. Training always takes place outdoors in the fresh air, and the meeting point is at the entrance of Volkspark Friedrichshain, near the tram station Paul-Heyse-Straße.
+            </p>
+            <p>
+                The training is at your own risk; it's about testing, experiencing, and expanding your physical limits. New people and beginners are welcome. We are a mixed group—some faces have been around for a long time, some come occasionally, and there are always new people. Women and men are equally represented and welcome.
+            </p>
+        </section>
+    </div>
+
+    <!-- German Content -->
+    <div id="content-de" class="hidden">
+        <header>
+            <h1>Hell Night Berlin</h1>
+            <p>Jeden Mittwoch von 18:00 bis 20:00 Uhr</p>
+        </header>
+        <section>
+            <p>
+                Die Hell Night ist ein 2-stündiges, parkourbezogenes Kraft- und Ausdauertraining. Sie findet jeden Mittwoch zwischen 18:00 und 20:00 Uhr statt, egal bei welchem Wetter, und wird komplett von Freiwilligen geleitet. Sie findet seit über 20 Jahren statt, selbst in Zeiten von Covid gab es sie noch. Es wird immer draußen an der frischen Luft trainiert und der Treffpunkt ist am Eingang des Volksparks Friedrichshain, in der Nähe der Tram-Station Paul-Heyse-Straße.
+            </p>
+            <p>
+                Das Training ist auf eigene Gefahr; es geht darum, seine physischen Grenzen auszutesten, zu erfahren und zu erweitern. Neue Leute und Anfänger sind gerne gesehen. Wir sind eine gemischte Gruppe—manche Gesichter sind seit langem da, manche kommen immer mal wieder, und es gibt immer neue Leute. Frauen und Männer sind gleichermaßen vertreten und willkommen.
+            </p>
+        </section>
+    </div>
+
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.3270716094336!2d13.442935016090084!3d52.529417079812826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e3617b9ed9f%3A0x55bd8c6b6cba631!2sPaul-Heyse-Stra%C3%9Fe%2C%2010439%20Berlin%2C%20Germany!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+    </div>
+
+    <script>
+        function showEnglish() {
+            document.getElementById('content-en').classList.remove('hidden');
+            document.getElementById('content-de').classList.add('hidden');
+        }
+        function showGerman() {
+            document.getElementById('content-de').classList.remove('hidden');
+            document.getElementById('content-en').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>
