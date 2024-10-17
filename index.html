@@ -36,41 +36,25 @@
         color: #ffffff;
         padding-bottom: 15vh;
       }
-      header {
-        padding: 20px;
-        text-align: center;
+      /* Banner */
+      .banner {
+        background-color: #000;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      h1 {
-        font-size: 3em;
-        margin-bottom: 10px;
-        animation: fadeInDown 1s;
-      }
-      /* Logo */
-      .logo {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-      }
-      .logo img {
-        height: 100px;
+      .banner img {
+        max-height: 100%;
+        max-width: 100%;
+        height: auto;
         width: auto;
-      }
-      /* Paragraph Container */
-      .content-container {
-        margin: 20px auto;
-        width: 80%;
-        max-width: 800px;
-        text-align: left;
-        animation: fadeIn 2s;
-      }
-      .content-container p {
-        font-size: 1.2em;
-        line-height: 1.5;
-        margin-bottom: 20px;
       }
       /* Language Toggle */
       .language-toggle {
         margin: 20px;
+        margin-top: 30px;
         text-align: right;
       }
       .language-toggle button {
@@ -86,6 +70,29 @@
       }
       .language-toggle button:hover {
         background-color: #533483;
+      }
+      /* Header */
+      header {
+        padding: 20px;
+        text-align: center;
+      }
+      h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        animation: fadeInDown 1s;
+      }
+      /* Paragraph Container */
+      .content-container {
+        margin: 20px auto;
+        width: 80%;
+        max-width: 800px;
+        text-align: left;
+        animation: fadeIn 2s;
+      }
+      .content-container p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        margin-bottom: 20px;
       }
       /* Map Container */
       .map-container {
@@ -135,15 +142,18 @@
         .content-container p {
           font-size: 1em;
         }
-        .logo img {
-          height: 40px;
+        .banner {
+          height: 15vh;
+        }
+        .banner img {
+          height: auto;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Logo -->
-    <div class="logo">
+    <!-- Banner -->
+    <div class="banner">
       <img src="/assets/hell-night-logo.jpeg" alt="Hell Night Logo" />
     </div>
 
@@ -255,10 +265,12 @@
 
     <script>
       function showEnglish() {
-        document.getElementById("content-en").classList.toggle("hidden");
+        document.getElementById("content-en").classList.remove("hidden");
+        document.getElementById("content-de").classList.add("hidden");
       }
       function showGerman() {
-        document.getElementById("content-de").classList.toggle("hidden");
+        document.getElementById("content-de").classList.remove("hidden");
+        document.getElementById("content-en").classList.add("hidden");
       }
     </script>
   </body>
