@@ -8,14 +8,14 @@
       /* General Styles */
       html {
         background: linear-gradient(135deg, #1a1a2e, #16213e);
+        background-color: #1a1a2e; /* Fallback color and overscroll background color */
       }
       body {
         margin: 0;
         font-family: Arial, sans-serif;
         color: #ffffff;
       }
-      header,
-      section {
+      header {
         padding: 20px;
         text-align: center;
       }
@@ -24,22 +24,23 @@
         margin-bottom: 10px;
         animation: fadeInDown 1s;
       }
-      p {
+      /* Paragraph Container */
+      .content-container {
+        margin: 20px auto;
+        width: 80%;
+        max-width: 800px;
+        text-align: left;
+        animation: fadeIn 2s;
+      }
+      .content-container p {
         font-size: 1.2em;
         line-height: 1.5;
-        animation: fadeIn 2s;
         margin-bottom: 20px;
       }
       /* Language Toggle */
       .language-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        transition: opacity 0.5s;
-      }
-      .language-toggle.hidden {
-        opacity: 0;
-        pointer-events: none;
+        margin: 20px;
+        text-align: left;
       }
       .language-toggle button {
         background-color: #0f3460;
@@ -100,14 +101,14 @@
         h1 {
           font-size: 2em;
         }
-        p {
+        .content-container p {
           font-size: 1em;
         }
       }
     </style>
   </head>
   <body>
-    <div class="language-toggle" id="language-toggle">
+    <div class="language-toggle">
       <button onclick="showEnglish()">English</button>
       <button onclick="showGerman()">Deutsch</button>
     </div>
@@ -118,7 +119,7 @@
         <h1>Hell Night Berlin</h1>
         <p>Every Wednesday from 18:00 to 20:00</p>
       </header>
-      <section>
+      <section class="content-container">
         <p>
           Hell Night is a 2-hour parkour-based strength and endurance training.
           It takes place every Wednesday between 18:00 and 20:00, regardless of
@@ -153,7 +154,7 @@
         <h1>Hell Night Berlin</h1>
         <p>Jeden Mittwoch von 18:00 bis 20:00 Uhr</p>
       </header>
-      <section>
+      <section class="content-container">
         <p>
           Die Hell Night ist ein 2-stündiges, parkourbezogenes Kraft- und
           Ausdauertraining. Sie findet jeden Mittwoch zwischen 18:00 und 20:00
@@ -185,7 +186,7 @@
 
     <div class="map-container">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2428.320728358849!2d13.443989!3d52.529416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5m6!3m5!1s0x0%3A0x0!7e2!8m2!3d52.5294167!4d13.443989!5e0!3m2!1sen!2sus!4v1697311234567!5m2!1sen!2sus"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2428.320728358849!2d13.443989!3d52.5294167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5m2!1sen!2sus!4v1697311234567!5m2!1sen!2sus"
         width="100%"
         height="450"
         frameborder="0"
@@ -205,26 +206,6 @@
         document.getElementById("content-de").classList.remove("hidden");
         document.getElementById("content-en").classList.add("hidden");
       }
-
-      // Hide language toggle on scroll down
-      let lastScrollTop = 0;
-      window.addEventListener(
-        "scroll",
-        function () {
-          let st = window.pageYOffset || document.documentElement.scrollTop;
-          if (st > lastScrollTop) {
-            // downscroll
-            document.getElementById("language-toggle").classList.add("hidden");
-          } else {
-            // upscroll
-            document
-              .getElementById("language-toggle")
-              .classList.remove("hidden");
-          }
-          lastScrollTop = st <= 0 ? 0 : st;
-        },
-        false
-      );
     </script>
   </body>
 </html>
