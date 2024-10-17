@@ -14,6 +14,7 @@
         margin: 0;
         font-family: Arial, sans-serif;
         color: #ffffff;
+        padding-bottom: 15vh;
       }
       header {
         padding: 20px;
@@ -40,7 +41,7 @@
       /* Language Toggle */
       .language-toggle {
         margin: 20px;
-        text-align: left;
+        text-align: right;
       }
       .language-toggle button {
         background-color: #0f3460;
@@ -59,7 +60,7 @@
       /* Map Container */
       .map-container {
         margin: 20px auto;
-        width: 80%;
+        width: 100%;
         max-width: 800px;
         animation: fadeInUp 1s;
       }
@@ -109,12 +110,12 @@
   </head>
   <body>
     <div class="language-toggle">
-      <button onclick="showEnglish()">English</button>
       <button onclick="showGerman()">Deutsch</button>
+      <button onclick="showEnglish()">English</button>
     </div>
 
     <!-- English Content -->
-    <div id="content-en">
+    <div id="content-en" class="hidden">
       <header>
         <h1>Hell Night Berlin</h1>
         <p>Every Wednesday from 18:00 to 20:00</p>
@@ -131,6 +132,21 @@
           the entrance of Volkspark Friedrichshain, near the tram station
           Paul-Heyse-Straße.
         </p>
+
+        <!-- Map -->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.320623471525!2d13.441778615904125!3d52.52941667981198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851ebf4a24847%3A0x0!2zNTLCsDMxJzQ1LjkiTiAxM8KwMjYnMzguNSJF!5e0!3m2!1sen!2sus!4v1697712977362!5m2!1sen!2sus"
+            width="100%"
+            height="450"
+            frameborder="0"
+            style="border: 0"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          ></iframe>
+        </div>
+
         <p>
           The training is at your own risk; it's about testing, experiencing,
           and expanding your physical limits. New people and beginners are
@@ -149,7 +165,7 @@
     </div>
 
     <!-- German Content -->
-    <div id="content-de" class="hidden">
+    <div id="content-de">
       <header>
         <h1>Hell Night Berlin</h1>
         <p>Jeden Mittwoch von 18:00 bis 20:00 Uhr</p>
@@ -167,6 +183,21 @@
           Volksparks Friedrichshain, in der Nähe der Tram-Station
           Paul-Heyse-Straße.
         </p>
+
+        <!-- Map -->
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.320623471525!2d13.441778615904125!3d52.52941667981198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851ebf4a24847%3A0x0!2zNTLCsDMxJzQ1LjkiTiAxM8KwMjYnMzguNSJF!5e0!3m2!1sde!2sus!4v1697712977362!5m2!1sde!2sus"
+            width="100%"
+            height="450"
+            frameborder="0"
+            style="border: 0"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          ></iframe>
+        </div>
+
         <p>
           Das Training ist auf eigene Gefahr; es geht darum, seine physischen
           Grenzen auszutesten, zu erfahren und zu erweitern. Neue Leute und
@@ -182,19 +213,6 @@
           Gemeinschaft zu werden? Komm zur Hell Night Berlin!
         </p>
       </section>
-    </div>
-
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2428.320728358849!2d13.443989!3d52.5294167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5m2!1sen!2sus!4v1697311234567!5m2!1sen!2sus"
-        width="100%"
-        height="450"
-        frameborder="0"
-        style="border: 0"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-      ></iframe>
     </div>
 
     <script>
