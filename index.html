@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <title>Hell Night Berlin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preload" as="image" href="/assets/hell-night-logo.webp" />
+
     <!-- Favicon -->
     <link
       rel="apple-touch-icon"
@@ -27,12 +30,15 @@
     <style>
       /* General Styles */
       html {
-        background-color: black; /* Fallback color and overscroll background color */
+        background: linear-gradient(135deg, #1a1a2e, #16213e);
+        background-color: #1a1a2e; /* Fallback color and overscroll background color */
+        scroll-behavior: smooth; /* Smooth scrolling */
       }
       body {
         margin: 0;
         font-family: Arial, sans-serif;
         color: #ffffff;
+        padding-bottom: 15vh;
       }
       /* Banner */
       .banner {
@@ -42,12 +48,52 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
       }
       .banner img {
-        max-height: 100%;
-        max-width: 100%;
+        max-height: 80%;
+        max-width: 80%;
         height: auto;
         width: auto;
+      }
+      /* Scroll Down Icon */
+      .scroll-down {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+      }
+      .scroll-down a {
+        text-decoration: none;
+        color: white;
+        font-size: 2em;
+        animation: bounce 2s infinite;
+      }
+      /* Arrow styling */
+      .scroll-down a span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border-bottom: 2px solid white;
+        border-right: 2px solid white;
+        transform: rotate(45deg);
+        margin: -4px;
+      }
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        40% {
+          transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+          transform: translateX(-50%) translateY(-5px);
+        }
       }
       /* Language Toggle */
       .language-toggle {
@@ -69,9 +115,8 @@
       .language-toggle button:hover {
         background-color: #533483;
       }
-      main {
-        background: linear-gradient(180deg, #000, #16213e);
-        padding-bottom: 15vh;
+      .language-toggle button.active-lang {
+        border: 2px solid white;
       }
       /* Header */
       header {
@@ -145,10 +190,13 @@
           font-size: 1em;
         }
         .banner {
-          height: 15vh;
+          height: 50vh;
         }
         .banner img {
           height: auto;
+        }
+        .scroll-down {
+          display: none; /* Hide scroll-down icon on small screens */
         }
       }
     </style>
@@ -156,17 +204,35 @@
   <body>
     <!-- Banner -->
     <div class="banner">
-      <img src="/assets/hell-night-logo.jpeg" alt="Hell Night Logo" />
+      <img src="/assets/hell-night-logo.webp" alt="Hell Night Logo" />
+      <div class="scroll-down">
+        <a href="#main-content" aria-label="Scroll down to main content"
+          ><span></span
+        ></a>
+      </div>
     </div>
 
-    <main>
-      <div class="language-toggle">
-        <button onclick="showGerman()">Deutsch</button>
-        <button onclick="showEnglish()">English</button>
-      </div>
+    <div class="language-toggle">
+      <button
+        id="btn-de"
+        onclick="showGerman()"
+        aria-label="Switch language to German"
+      >
+        Deutsch
+      </button>
+      <button
+        id="btn-en"
+        onclick="showEnglish()"
+        aria-label="Switch language to English"
+      >
+        English
+      </button>
+    </div>
 
+    <!-- Main Content -->
+    <div id="main-content">
       <!-- English Content -->
-      <div id="content-en" class="hidden">
+      <div id="content-en" class="hidden" lang="en">
         <header>
           <h1>Hell Night Berlin</h1>
           <p>Every Wednesday from 18:00 to 20:00</p>
@@ -195,6 +261,7 @@
               allowfullscreen=""
               aria-hidden="false"
               tabindex="0"
+              title="Hell Night Berlin Location Map"
             ></iframe>
           </div>
 
@@ -216,7 +283,7 @@
       </div>
 
       <!-- German Content -->
-      <div id="content-de">
+      <div id="content-de" lang="de">
         <header>
           <h1>Hell Night Berlin</h1>
           <p>Jeden Mittwoch von 18:00 bis 20:00 Uhr</p>
@@ -246,6 +313,7 @@
               allowfullscreen=""
               aria-hidden="false"
               tabindex="0"
+              title="Standortkarte Hell Night Berlin"
             ></iframe>
           </div>
 
@@ -265,17 +333,25 @@
           </p>
         </section>
       </div>
-    </main>
+    </div>
 
     <script>
       function showEnglish() {
         document.getElementById("content-en").classList.remove("hidden");
         document.getElementById("content-de").classList.add("hidden");
+        document.getElementById("btn-en").classList.add("active-lang");
+        document.getElementById("btn-de").classList.remove("active-lang");
       }
       function showGerman() {
         document.getElementById("content-de").classList.remove("hidden");
         document.getElementById("content-en").classList.add("hidden");
+        document.getElementById("btn-de").classList.add("active-lang");
+        document.getElementById("btn-en").classList.remove("active-lang");
       }
+      // Initialize with German as default
+      window.onload = function () {
+        showGerman();
+      };
     </script>
   </body>
 </html>
