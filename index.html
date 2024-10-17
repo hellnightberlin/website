@@ -27,14 +27,12 @@
     <style>
       /* General Styles */
       html {
-        background: linear-gradient(135deg, #1a1a2e, #16213e);
-        background-color: #1a1a2e; /* Fallback color and overscroll background color */
+        background-color: black; /* Fallback color and overscroll background color */
       }
       body {
         margin: 0;
         font-family: Arial, sans-serif;
         color: #ffffff;
-        padding-bottom: 15vh;
       }
       /* Banner */
       .banner {
@@ -70,6 +68,10 @@
       }
       .language-toggle button:hover {
         background-color: #533483;
+      }
+      main {
+        background: linear-gradient(180deg, #000, #16213e);
+        padding-bottom: 15vh;
       }
       /* Header */
       header {
@@ -157,111 +159,113 @@
       <img src="/assets/hell-night-logo.jpeg" alt="Hell Night Logo" />
     </div>
 
-    <div class="language-toggle">
-      <button onclick="showGerman()">Deutsch</button>
-      <button onclick="showEnglish()">English</button>
-    </div>
+    <main>
+      <div class="language-toggle">
+        <button onclick="showGerman()">Deutsch</button>
+        <button onclick="showEnglish()">English</button>
+      </div>
 
-    <!-- English Content -->
-    <div id="content-en" class="hidden">
-      <header>
-        <h1>Hell Night Berlin</h1>
-        <p>Every Wednesday from 18:00 to 20:00</p>
-      </header>
-      <section class="content-container">
-        <p>
-          Hell Night is a 2-hour parkour-based strength and endurance training.
-          It takes place every Wednesday between 18:00 and 20:00, regardless of
-          the weather, and is entirely led by volunteers.
-        </p>
-        <p>
-          Running for over 20 years—even during the times of COVID—the training
-          always takes place outdoors in the fresh air. The meeting point is at
-          the entrance of Volkspark Friedrichshain, near the tram station
-          Paul-Heyse-Straße.
-        </p>
+      <!-- English Content -->
+      <div id="content-en" class="hidden">
+        <header>
+          <h1>Hell Night Berlin</h1>
+          <p>Every Wednesday from 18:00 to 20:00</p>
+        </header>
+        <section class="content-container">
+          <p>
+            Hell Night is a 2-hour parkour-based strength and endurance
+            training. It takes place every Wednesday between 18:00 and 20:00,
+            regardless of the weather, and is entirely led by volunteers.
+          </p>
+          <p>
+            Running for over 20 years—even during the times of COVID—the
+            training always takes place outdoors in the fresh air. The meeting
+            point is at the entrance of Volkspark Friedrichshain, near the tram
+            station Paul-Heyse-Straße.
+          </p>
 
-        <!-- Map -->
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps?q=52.5294167,13.4439889&hl=en&z=17&output=embed"
-            width="100%"
-            height="450"
-            frameborder="0"
-            style="border: 0"
-            allowfullscreen=""
-            aria-hidden="false"
-            tabindex="0"
-          ></iframe>
-        </div>
+          <!-- Map -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps?q=52.5294167,13.4439889&hl=en&z=17&output=embed"
+              width="100%"
+              height="450"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
+          </div>
 
-        <p>
-          The training is at your own risk; it's about testing, experiencing,
-          and expanding your physical limits. New people and beginners are
-          always welcome.
-        </p>
-        <p>
-          We are a mixed group—some faces have been around for a long time, some
-          come occasionally, and there are always new people. Women and men are
-          equally represented and welcome.
-        </p>
-        <p>
-          Ready to challenge yourself and join a supportive community? Come and
-          be part of Hell Night Berlin!
-        </p>
-      </section>
-    </div>
+          <p>
+            The training is at your own risk; it's about testing, experiencing,
+            and expanding your physical limits. New people and beginners are
+            always welcome.
+          </p>
+          <p>
+            We are a mixed group—some faces have been around for a long time,
+            some come occasionally, and there are always new people. Women and
+            men are equally represented and welcome.
+          </p>
+          <p>
+            Ready to challenge yourself and join a supportive community? Come
+            and be part of Hell Night Berlin!
+          </p>
+        </section>
+      </div>
 
-    <!-- German Content -->
-    <div id="content-de">
-      <header>
-        <h1>Hell Night Berlin</h1>
-        <p>Jeden Mittwoch von 18:00 bis 20:00 Uhr</p>
-      </header>
-      <section class="content-container">
-        <p>
-          Die Hell Night ist ein 2-stündiges, parkourbezogenes Kraft- und
-          Ausdauertraining. Sie findet jeden Mittwoch zwischen 18:00 und 20:00
-          Uhr statt, egal bei welchem Wetter, und wird komplett von Freiwilligen
-          geleitet.
-        </p>
-        <p>
-          Seit über 20 Jahren aktiv—selbst in Zeiten von COVID—trainieren wir
-          immer draußen an der frischen Luft. Der Treffpunkt ist am Eingang des
-          Volksparks Friedrichshain, in der Nähe der Tram-Station
-          Paul-Heyse-Straße.
-        </p>
+      <!-- German Content -->
+      <div id="content-de">
+        <header>
+          <h1>Hell Night Berlin</h1>
+          <p>Jeden Mittwoch von 18:00 bis 20:00 Uhr</p>
+        </header>
+        <section class="content-container">
+          <p>
+            Die Hell Night ist ein 2-stündiges, parkourbezogenes Kraft- und
+            Ausdauertraining. Sie findet jeden Mittwoch zwischen 18:00 und 20:00
+            Uhr statt, egal bei welchem Wetter, und wird komplett von
+            Freiwilligen geleitet.
+          </p>
+          <p>
+            Seit über 20 Jahren aktiv—selbst in Zeiten von COVID—trainieren wir
+            immer draußen an der frischen Luft. Der Treffpunkt ist am Eingang
+            des Volksparks Friedrichshain, in der Nähe der Tram-Station
+            Paul-Heyse-Straße.
+          </p>
 
-        <!-- Map -->
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps?q=52.5294167,13.4439889&hl=de&z=17&output=embed"
-            width="100%"
-            height="450"
-            frameborder="0"
-            style="border: 0"
-            allowfullscreen=""
-            aria-hidden="false"
-            tabindex="0"
-          ></iframe>
-        </div>
+          <!-- Map -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps?q=52.5294167,13.4439889&hl=de&z=17&output=embed"
+              width="100%"
+              height="450"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
+          </div>
 
-        <p>
-          Das Training ist auf eigene Gefahr; es geht darum, seine physischen
-          Grenzen auszutesten, zu erfahren und zu erweitern. Neue Leute und
-          Anfänger sind immer gerne gesehen.
-        </p>
-        <p>
-          Wir sind eine gemischte Gruppe—manche Gesichter sind seit langem da,
-          manche kommen immer mal wieder, und es gibt immer neue Leute. Frauen
-          und Männer sind gleichermaßen vertreten und willkommen.
-        </p>
-        <p>
-          Bereit, dich selbst herauszufordern und Teil einer unterstützenden
-          Gemeinschaft zu werden? Komm zur Hell Night Berlin!
-        </p>
-      </section>
-    </div>
+          <p>
+            Das Training ist auf eigene Gefahr; es geht darum, seine physischen
+            Grenzen auszutesten, zu erfahren und zu erweitern. Neue Leute und
+            Anfänger sind immer gerne gesehen.
+          </p>
+          <p>
+            Wir sind eine gemischte Gruppe—manche Gesichter sind seit langem da,
+            manche kommen immer mal wieder, und es gibt immer neue Leute. Frauen
+            und Männer sind gleichermaßen vertreten und willkommen.
+          </p>
+          <p>
+            Bereit, dich selbst herauszufordern und Teil einer unterstützenden
+            Gemeinschaft zu werden? Komm zur Hell Night Berlin!
+          </p>
+        </section>
+      </div>
+    </main>
 
     <script>
       function showEnglish() {
